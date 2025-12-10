@@ -1,0 +1,103 @@
+==================================================
+                 LexiFix Build Guide
+==================================================
+
+This project is a hybrid spell checker using:
+• Dictionary correction
+• BERT contextual correction
+• Optional grammar correction (GPU recommended)
+• Web UI built with Gradio
+
+--------------------------------------------------
+1) REQUIRED SOFTWARE
+--------------------------------------------------
+Install Python 3.9 or newer:
+https://www.python.org/downloads/
+
+Make sure Python and pip are in PATH.
+
+--------------------------------------------------
+2) OPEN THE PROJECT FOLDER
+--------------------------------------------------
+Unzip the project file.
+Open a terminal / command prompt inside the folder.
+
+Example (Windows PowerShell):
+cd SpellChecker-main
+
+Example (Mac / Linux):
+cd SpellChecker-main
+
+--------------------------------------------------
+3) CREATE A VIRTUAL ENVIRONMENT (RECOMMENDED)
+--------------------------------------------------
+Windows:
+python -m venv venv
+venv\Scripts\activate
+
+Mac / Linux:
+python3 -m venv venv
+source venv/bin/activate
+
+--------------------------------------------------
+4) INSTALL REQUIRED PACKAGES
+--------------------------------------------------
+Run this command in the terminal:
+
+pip install -r requirements.txt
+
+(This may take several minutes because it downloads
+language models used by the program.)
+
+--------------------------------------------------
+5) OPTIONAL GPU SUPPORT
+--------------------------------------------------
+If you have an NVIDIA GPU and want faster performance,
+install the matching PyTorch CUDA build from:
+https://pytorch.org/get-started/locally/
+
+If you do not have a GPU, the program still works,
+but grammar polishing will be disabled automatically.
+
+--------------------------------------------------
+6) START THE APPLICATION
+--------------------------------------------------
+Run the Gradio interface:
+
+python app.py
+
+or (depending on file name):
+python LexiFix.py
+
+After a few seconds, a link will appear in the terminal.
+Click it or copy it into your browser.
+
+--------------------------------------------------
+7) USING THE APP
+--------------------------------------------------
+1) Type or paste text into the input box.
+2) Click “Run Spell + Context + Grammar”.
+3) The program will show:
+   - Original text
+   - Corrected text
+   - Final grammar-polished text (GPU only)
+   - List of words changed
+
+--------------------------------------------------
+8) EXITING
+--------------------------------------------------
+Close the browser tab.
+Press CTRL + C inside the terminal to stop the server.
+
+--------------------------------------------------
+9) LICENSE AND CREDITS
+--------------------------------------------------
+This software uses public research models including:
+BERT (for context) and FLAN-T5 (for optional grammar).
+
+Models and packages are owned by their authors.
+This project configures them for demonstration use.
+
+==================================================
+                   END OF FILE
+==================================================
